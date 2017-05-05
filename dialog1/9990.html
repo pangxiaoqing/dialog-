@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimun-scale=1.0,maximum-scale=1.0">
+    <title>dialog(会话框)</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="loading">loading</div>
+<div class="message mar_top">message info</div>
+<div class="confirm mar_top">dialog confirm</div>
+<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="js/dialog.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //调用者调用
+        $(document.body).on("tap","div.loading",function(){
+            new Dialog({
+                type:'load'
+                //tapMaskClose: true
+            });
+        });
+        $(document.body).on("tap","div.message",function(){
+            new Dialog({
+                type:'info',
+                span_content:"真是服了",
+                isDelayClose:true,
+                times:"1500"
+            });
+        });
+        $(document.body).on("tap","div.confirm",function(){
+            var confirm = new Dialog({
+                type:'confirm',
+                span_content:'你好'
+            });
+            confirm.on('confirm', function() {
+                alert('a')
+                confirm.close()
+            })
+            confirm.on('cancel', function() {
+                alert('b')
+                confirm.close()
+            })
+        });
+    })
+</script>
+</body>
+</html>

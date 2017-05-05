@@ -1,0 +1,44 @@
+body,div{padding:0;margin:0;border:none;}
+body,html{width:100%;height:100%;}
+.loading,.message,.confirm{width:100%;height:50px;background-color:#f64599;text-align:center;line-height:50px;font-size:14px;color:#fff;}
+.mar_top{margin-top:20px;}
+.show{display:block;}
+.body_box{display:flex;/*align-items:flex-start;垂直居中*/justify-content: center;/*水平居中*/
+    display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;-webkit-box-pack:center;-moz-justify-content:center;-webkit-justify-content:center;}
+.mask{position:absolute;background-color:rgba(0,0,0,0.5);z-index:99;width:100%;height:100%;top:0;left:0;}
+.content{background-color:rgba(0,0,0,0.8);z-index:999;border-radius:0.6em;animation:mymove 0.5s cubic-bezier(0.4, 0.3, 0.44, 1.66);display:flex;
+    align-items: center;
+    flex-direction:column;/*主轴方向垂直方向*/
+    padding: 0 1.25em 1.25em;
+    position:relative;
+    top:-3em;}
+.content_load{padding:0;}
+.content_info{padding:0 2em 2.5em;}
+@keyframes mymove{
+    /*from{top:0px;transform: scale(0);}
+    to{top:content.attr(top);transform: scale(1.0);}*/
+    0%{
+      transform: scale(0);  
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+.box{background-size:2.5em 2.5em;background-repeat:no-repeat;background-position:center;padding:2.5em;}
+.box_info_padding{background-size: 3em 3em;padding: 3em;}
+.box_bgimg_loading{background-image:url(../images/loading.png);animation:rotates 2s linear infinite;}
+@keyframes rotates{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.box_bgimg_info{background-image:url(../images/info.png);}
+.box_bgimg_right{background-image:url(../images/right.png);}
+.spantxt{font-size:1em;color:#fff;display:inline-block;line-height:1.2rem;width:5em;text-align:center;justify-content: center;}
+
+.button_box{justify-content:space-around;padding-top:1.25em;}
+button{background-color:#fff;border-radius:0.3em;color:#333;border:none;line-height:1.5em;text-align:center;padding:0.3em 1em;}
+.true_btn{background-color:#45a5f6;color:#fff;margin-right:1.25em;}
